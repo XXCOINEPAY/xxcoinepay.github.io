@@ -73,7 +73,7 @@
 
   <div class="step">
     <h2>步骤 1：注册 Coinepay 账号</h2>
-    <p>访问 <a href="https://coinepay.net" target="_blank" style="color:#1da1f2;text-decoration:underline;">Coinepay.net</a>，点击注册，建议谷歌邮箱快捷登录</p>
+    <p>访问 <a     type = "button" onclick = "gtag_report_conversion()"   href="https://coinepay.net" target="_blank" style="color:#1da1f2;text-decoration:underline;">Coinepay.net</a>，点击注册，建议谷歌邮箱快捷登录</p>
   </div>
 
   <div class="step">
@@ -115,7 +115,7 @@
     
   </div>
 
-  <a class="btn" href="https://coinepay.net" target="_blank">立即前往 Coinepay 官网</a>
+  <a      type = "button" onclick = "gtag_report_conversion()"    class="btn" href="https://coinepay.net" target="_blank">立即前往 Coinepay 官网</a>
 
 
 
@@ -129,6 +129,28 @@
 
   gtag('config', 'AW-17249082051');
 </script>
+
+
+<!-- Event snippet for 网页浏览 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17249082051/67evCPiukOAaEMO1gKFA',
+      'value': 3.0,
+      'currency': 'HKD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+  
   
 
 </body>
